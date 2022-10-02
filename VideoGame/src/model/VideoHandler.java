@@ -74,11 +74,12 @@ public class VideoHandler {
     }
 
     public void generate() {
-        levelCraft();
         treasureCraft();
         enemyCraft();
+        levelCraft();
         enemyAppend();
         treasureAppend();
+        genDifficultyLvl();
     }
 
     public void newPlayer() {
@@ -138,6 +139,12 @@ public class VideoHandler {
         for(int i=0; i< levels.length;i++) {
             levels[i].addTreasure(treasures[(int)(Math.random() * 50)]);
             levels[i].addTreasure(treasures[(int)(Math.random() * 50)]);
+        }
+    }
+
+    public void genDifficultyLvl(){
+        for(int i=0; i< levels.length;i++){
+            levels[i].calculateDif();
         }
     }
 }

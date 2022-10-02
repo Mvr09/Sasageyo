@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Level {
     private int id;
     private int ptsNeed = 0;
-    private int difficulty;
+    private Difficulty difficulty;
     private Treasure[] treasures;
     private Enemy[] enemies;
 
@@ -40,11 +40,11 @@ public class Level {
         this.ptsNeed = ptsNeed;
     }
 
-    public int getDifficulty() {
+    public Difficulty getDifficulty() {
         return difficulty;
     }
 
-    public void setDifficulty(int difficulty) {
+    public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
     }
 
@@ -74,7 +74,34 @@ public class Level {
                 ", enemies=" + Arrays.toString(enemies) +
                 '}';
     }
+    public int scoreTreasures(){
+        int scoreT = 0;
+        for(int i = 0; i < treasures.length; i++){
+            scoreT += treasures[i].getScore();
+        }
+        return scoreT;
+    }
+    public int scoreEnemies(){
+        int scoreE = 0;
+        for(int i = 0; i < enemies.length; i++){
+            scoreE += enemies[i].getScore();
+        }
+        return scoreE;
+    }
 
+    public void calculateDif(){
+        int scoreT = scoreTreasures();
+        int scoreE = scoreEnemies();
+        Difficulty difficulty = Difficulty.values()[0];
+        if(scoreT>scoreE){
+            difficulty = Difficulty.values()[0];
+        } else if (scoreT == scoreE) {
+            difficulty = Difficulty.values()[1];
+        } else if (scoreT < scoreE) {
+            difficulty = Difficulty.values()[2];
+        }
+        this.difficulty = difficulty;
+    }
     public void addTreasure(Treasure newTreasure) {
         for (int i = 0; i < treasures.length; i++) {
             if (treasures[i] == null) {
