@@ -7,9 +7,71 @@ public class VideoManager {
     public static VideoHandler videoH = new VideoHandler();
 
     public static void main(String[] args) {
-
         videoH.generate();
         System.out.println(videoH.toString());
-    }
+        menu();
 
+    }
+    public static void menu(){
+        int option = 100;
+        while(option != 0){
+            System.out.println("Digite que quiere hacer, dando su numero:\n" +
+                    "1: Crear un jugador\n" +
+                    "2: Registrar un enemigo a un nivel, sabiendo que entra como un cuarto enemigo\n" +
+                    "3: Registrar un tesoro extra a un nivel, entra como bonus\n" +
+                    "4: Modificar el puntaje de un jugador\n" +
+                    "5: Subir de nivel al jugador, si le alcanzan los puntos\n" +
+                    "6: Solicitar informacion de un nivel en especifico\n" +
+                    "7: Informar cantidad de un tipo de tesoro (No hay tipo creado)\n" +
+                    "8: Informar cantidad de un tipo de enemigo en todos los niveles\n" +
+                    "9: Informar el tipo de tesoro mas repetido en todos los niveles\n" +
+                    "10: Informar el enemigo que otorga mayor puntaje y el nivel donde se ubica\n" +
+                    "11: Informar la cantidad de consonantes encontradas en los nombres de los enemigos del juego.(name?)\n" +
+                    "12: Informar el top 5 de jugadores\n" +
+                    "0: Exit");
+            option = sc.nextInt();
+            switch (option){
+                case 1 -> {
+                    videoH.newPlayer();
+                }
+                case 2 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 3 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 4 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 5 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 6 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 7 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 8 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 9 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 10 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 11 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 12 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 0 -> {
+                    break;
+                } //Need method
+                default -> throw new IllegalStateException("Unexpected value: " + option);
+            }
+        }
+    }
 }
