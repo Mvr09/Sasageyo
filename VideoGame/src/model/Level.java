@@ -18,8 +18,10 @@ public class Level {
 
     public Level(int id, int ptsNeed) {
         this.id = id;
-        this.treasures = new Treasure[2];
-        this.enemies = new Enemy[3];
+        // Se aumento a Treasures[3] para permitir un bono dado por el usuario
+        this.treasures = new Treasure[3];
+        //Enemy[4] ya que solo Enemy[3] se llenan automaticamente luego el ultimo lo da el jugador si quiere
+        this.enemies = new Enemy[4];
         this.ptsNeed = ptsNeed;
     }
 
@@ -77,14 +79,19 @@ public class Level {
     public int scoreTreasures(){
         int scoreT = 0;
         for(int i = 0; i < treasures.length; i++){
-            scoreT += treasures[i].getScore();
+            if (treasures[i] != null){
+                scoreT += treasures[i].getScore();
+            }
+
         }
         return scoreT;
     }
     public int scoreEnemies(){
         int scoreE = 0;
         for(int i = 0; i < enemies.length; i++){
-            scoreE += enemies[i].getScore();
+            if(enemies[i] != null) {
+                scoreE += enemies[i].getScore();
+            }
         }
         return scoreE;
     }
