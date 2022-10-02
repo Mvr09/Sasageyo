@@ -24,7 +24,6 @@ public class Level {
     }
 
 
-
     public int getId() {
         return id;
     }
@@ -68,7 +67,7 @@ public class Level {
     @Override
     public String toString() {
         return "Level{" +
-                "Id="+ this.id +
+                "Id=" + this.id +
                 ", ptsNeed=" + this.ptsNeed +
                 ", difficulty=" + this.difficulty +
                 ", treasures=" + Arrays.toString(treasures) +
@@ -76,15 +75,19 @@ public class Level {
                 '}';
     }
 
-    public void generate(){
-        for (int i = 0; i<treasures.length;i++){
-            Treasure newTreasure = VideoManager.videoH.getTreasures()[(int)(Math.random() * 50)];
+    public void generate() {
+        for (int i = 0; i < treasures.length; i++) {
+            Treasure newTreasure = VideoManager.videoH.getTreasures()[(int) (Math.random() * 50)];
             treasures[i] = newTreasure;
         }
+    }
 
-        for (int i = 0; i<enemies.length;i++){
-            Enemy newEnemies = new Enemy();
-            enemies[i] = newEnemies;
+    public void addEnemy(Enemy newEnemy) {
+        for (int i = 0; i < enemies.length; i++) {
+            if (enemies[i] == null) {
+                enemies[i] = newEnemy;
+                break;
+            }
         }
     }
 }
