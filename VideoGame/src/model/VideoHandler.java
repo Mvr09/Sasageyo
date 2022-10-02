@@ -119,7 +119,9 @@ public class VideoHandler {
 
     public void enemyAppend(){
         for(int i=0; i< levels.length;i++) {
-            levels[i].addEnemy(enemies[(int)(Math.random() * 26)]);
+            levels[i].addEnemy(enemies[(int)(Math.random() * 25)]);
+            levels[i].addEnemy(enemies[(int)(Math.random() * 25)]);
+            levels[i].addEnemy(enemies[(int)(Math.random() * 25)]);
         }
     }
 }
