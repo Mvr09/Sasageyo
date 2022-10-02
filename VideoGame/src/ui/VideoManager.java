@@ -7,6 +7,7 @@ public class VideoManager {
     public static VideoHandler videoH = new VideoHandler();
 
     public static void main(String[] args) {
+
         videoH.generate();
         System.out.println(videoH.toString());
     }

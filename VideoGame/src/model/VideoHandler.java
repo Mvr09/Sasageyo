@@ -66,9 +66,9 @@ public class VideoHandler {
     public String toString() {
         return "VideoHandler{" +
                 //"players=" + Arrays.toString(players) +
-                ",\ntreasures=" + Arrays.toString(treasures) +
+                ",\ntreasures bible=" + Arrays.toString(treasures) +
                 "\n, levels=" + Arrays.toString(levels) +
-                ",\n enemies=" + Arrays.toString(enemies) +
+                ",\n enemy bible=" + Arrays.toString(enemies) +
                 ",\n resolution=" + resolution +
                 '}';
     }
@@ -78,6 +78,7 @@ public class VideoHandler {
         treasureCraft();
         enemyCraft();
         enemyAppend();
+        treasureAppend();
     }
 
     public void newPlayer() {
@@ -95,7 +96,6 @@ public class VideoHandler {
         int ptsNeed = 30;
         for (int i = 0; i < levels.length; i++) {
             Level newLevel = new Level(id, ptsNeed);
-            newLevel.generate();
             id++;
             ptsNeed += 30;
             levels[i] = newLevel;
@@ -119,9 +119,25 @@ public class VideoHandler {
 
     public void enemyAppend(){
         for(int i=0; i< levels.length;i++) {
+            Enemy enemyA = enemies[(int)(Math.random() * 25)];
+            Enemy enemyB = enemies[(int)(Math.random() * 25)];
+            Enemy enemyC = enemies[(int)(Math.random() * 25)];
+            levels[i].addEnemy(enemyA);
+            while(enemyA == enemyB){
+                enemyB = enemies[(int)(Math.random() * 25)];
+            }
+            levels[i].addEnemy(enemyB);
+            while((enemyA == enemyC)||(enemyB == enemyC)){
+                enemyC = enemies[(int)(Math.random() * 25)];
+            }
+
             levels[i].addEnemy(enemies[(int)(Math.random() * 25)]);
-            levels[i].addEnemy(enemies[(int)(Math.random() * 25)]);
-            levels[i].addEnemy(enemies[(int)(Math.random() * 25)]);
+        }
+    }
+    public void treasureAppend(){
+        for(int i=0; i< levels.length;i++) {
+            levels[i].addTreasure(treasures[(int)(Math.random() * 50)]);
+            levels[i].addTreasure(treasures[(int)(Math.random() * 50)]);
         }
     }
 }
