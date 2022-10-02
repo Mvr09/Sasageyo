@@ -30,6 +30,48 @@ public class VideoManager {
                     "12: Informar el top 5 de jugadores\n" +
                     "0: Exit");
             option = sc.nextInt();
+            switch (option){
+                case 1 -> {
+                    videoH.newPlayer();
+                }
+                case 2 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 3 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 4 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 5 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 6 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 7 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 8 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 9 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 10 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 11 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 12 -> {
+                    videoH.newPlayer();
+                } //Need method
+                case 0 -> {
+                    break;
+                } //Need method
+                default -> throw new IllegalStateException("Unexpected value: " + option);
+            }
         }
     }
 }
