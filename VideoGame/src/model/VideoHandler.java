@@ -65,7 +65,7 @@ public class VideoHandler {
     @Override
     public String toString() {
         return "VideoHandler{" +
-                //"players=" + Arrays.toString(players) +
+                "\nplayers=" + Arrays.toString(players) +
                 ",\ntreasures bible=" + Arrays.toString(treasures) +
                 "\n, levels=" + Arrays.toString(levels) +
                 ",\n enemy bible=" + Arrays.toString(enemies) +
@@ -82,10 +82,10 @@ public class VideoHandler {
         genDifficultyLvl();
     }
 
-    public void newPlayer() {
+    public void newPlayer(String nickname) {
         for (int i = 0; i < players.length; i++) {
             if (players[i] == null) {
-                Player newPlayer = new Player("Jugador");
+                Player newPlayer = new Player(nickname, i);
                 players[i] = newPlayer;
                 break;
             }

@@ -9,10 +9,52 @@ public class Player {
     private int puntaje;
     private int lives;
 
-    public Player(String nickname){
-        this.name = name;
+    public Player(String nickname, int id){
+        this.name = "Player"+id;
         this.nickname = nickname;
         this.lives = 5;
         this.puntaje = 10;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public int getPuntaje() {
+        return puntaje;
+    }
+
+    public void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
+    }
+
+    public int getLives() {
+        return lives;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", puntaje=" + puntaje +
+                ", lives=" + lives +
+                '}';
     }
 }

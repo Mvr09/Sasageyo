@@ -28,47 +28,51 @@ public class VideoManager {
                     "10: Informar el enemigo que otorga mayor puntaje y el nivel donde se ubica\n" +
                     "11: Informar la cantidad de consonantes encontradas en los nombres de los enemigos del juego.(name?)\n" +
                     "12: Informar el top 5 de jugadores\n" +
+                    "13: Muestra todos los datos de la generacion y jugadores\n" +
                     "0: Exit");
             option = sc.nextInt();
             switch (option){
                 case 1 -> {
-                    videoH.newPlayer();
+                    System.out.println("Digite su nickname");
+                    sc.nextLine();
+                    String nickname = sc.nextLine();
+                    videoH.newPlayer(nickname);
                 }
                 case 2 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 3 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 4 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 5 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 6 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 7 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 8 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 9 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 10 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 11 -> {
-                    videoH.newPlayer();
+
                 } //Need method
                 case 12 -> {
-                    videoH.newPlayer();
+
                 } //Need method
-                case 0 -> {
-                    break;
+                case 13 -> {
+                    System.out.println(videoH.toString());
                 } //Need method
                 default -> throw new IllegalStateException("Unexpected value: " + option);
             }
