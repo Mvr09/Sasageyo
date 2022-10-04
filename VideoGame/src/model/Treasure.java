@@ -10,7 +10,7 @@ public class Treasure {
 
     public Treasure() {
         this.score = score;
-        this.type = TypeT.values()[(int) Math.random() * 4];
+        this.type = TypeT.values()[(int)(Math.random() * 4)];
         this.url = url;
         this.xVal = xVal;
         this.yVal = yVal;
@@ -60,7 +60,7 @@ public class Treasure {
     public String toString() {
         return "Treasure{" +
                 "score=" + score +
-                ", type=" + type +
+                ", type=" + this.type +
                 ", url='" + url + '\'' +
                 ", xVal=" + xVal +
                 ", yVal=" + yVal +
