@@ -2,7 +2,7 @@ package src.model;
 import java.lang.Math;
 public class Treasure {
     private int score = (int)(Math.random() * 101);
-    private String url = "https://img.freepik.com/premium-vector/treasure-chest-pixel-art-style_505135-49.jpg?w=2000";
+    private String url = "https://art.pixilart.com/a39a80b7c81f494.png";
     private int xVal = (int)(Math.random() * 101);
     private int yVal = (int)(Math.random() * 101);
 
