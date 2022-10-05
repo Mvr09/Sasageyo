@@ -62,10 +62,16 @@ public class VideoManager {
                     int idL = sc.nextInt();
 
                     videoH.addTreasureLvl(idT, idL-1);
-
                 }
                 case 4 -> {
+                    videoH.displyPlayers();
+                    System.out.println("Digite el numero de jugador a modificar");
+                    int plId = sc.nextInt();
 
+                    System.out.println("Digite el numero del puntaje nuevo");
+                    int scoreChange = sc.nextInt();
+
+                    videoH.modifyScorePlayer(plId, scoreChange);
                 } //Need method
                 case 5 -> {
 

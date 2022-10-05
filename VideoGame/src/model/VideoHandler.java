@@ -147,6 +147,14 @@ public class VideoHandler {
             levels[i].calculateDif();
         }
     }
+    public void displyPlayers(){
+        System.out.println("Lista completa de jugadores con su id y puntaje");
+        for(int i = 0; i<players.length; i++){
+            if(players[i] != null) {
+                System.out.println(players[i].guidePlayers());
+            }
+        }
+    }
 
     public void displayLevels(){
         System.out.println("Lista completa de niveles con su id y dificultad");
@@ -179,6 +187,10 @@ public class VideoHandler {
         levels[idL].addTreasure(copyTreasure);
         System.out.println("Nivel modificado con un tesoro extra");
         System.out.println(levels[idL].toString());
+    }
+
+    public void modifyScorePlayer(int plId, int newScore){
+        players[plId].setPuntaje(newScore);
     }
 }
 

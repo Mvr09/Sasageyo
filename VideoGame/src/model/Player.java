@@ -10,7 +10,7 @@ public class Player {
     private int lives;
 
     public Player(String nickname, int id){
-        this.name = "Player"+id;
+        this.name = "Player "+id;
         this.nickname = nickname;
         this.lives = 5;
         this.puntaje = 10;
@@ -58,5 +58,13 @@ public class Player {
                 '}';
     }
 
+    public String guidePlayers(){
+        return "Player{" +
+                "Numero de jugador='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", puntaje=" + puntaje +
+                '}'+"\n";
+
+    }
 
 }
