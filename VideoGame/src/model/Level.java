@@ -125,4 +125,9 @@ public class Level {
             }
         }
     }
+
+    public String guideLevel(){
+        return "Level{" + "Id=" + this.id +
+                ", difficulty=" + this.difficulty+"\n";
+    }
 }

@@ -1,17 +1,21 @@
 package src.model;
 
 public class Enemy {
-    private int score = (int)(Math.random() * 101);
+
+    private int id;
+    private int score = (int) (Math.random() * 101);
     private Type type;
-    private int xVal = (int)(Math.random() * 101);
-    private int yVal = (int)(Math.random() * 101);
+    private int xVal = (int) (Math.random() * 101);
+    private int yVal = (int) (Math.random() * 101);
 
-    public Enemy() {
 
-        this.score =  score;
-        this.type = Type.values()[(int)(Math.random() * 3)];
+    public Enemy(int id) {
+        this.id = id;
+        this.score = score;
+        this.type = Type.values()[(int) (Math.random() * 3)];
         this.xVal = xVal;
         this.yVal = yVal;
+
     }
 
     public int getScore() {
@@ -46,13 +50,28 @@ public class Enemy {
         this.yVal = yVal;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Enemy{" +
-                "score=" + score +
+                "id=" + id +
+                ", score=" + score +
                 ", type=" + type +
                 ", xVal=" + xVal +
                 ", yVal=" + yVal +
                 '}';
+    }
+    public String guideEnemy(){
+        return "Enemy{" +
+                "id=" + id +
+                ", score=" + score +
+                ", type=" + type + "}\n";
     }
 }

@@ -66,9 +66,9 @@ public class VideoHandler {
     public String toString() {
         return "VideoHandler{" +
                 "\nplayers=" + Arrays.toString(players) +
-                ",\ntreasures bible=" + Arrays.toString(treasures) +
+                ",\ntreasures guide=" + Arrays.toString(treasures) +
+                ",\n enemy guide=" + Arrays.toString(enemies) +
                 "\n, levels=" + Arrays.toString(levels) +
-                ",\n enemy bible=" + Arrays.toString(enemies) +
                 ",\n resolution=" + resolution +
                 '}';
     }
@@ -105,7 +105,7 @@ public class VideoHandler {
 
     public void treasureCraft() {
         for (int i = 0; i < treasures.length; i++) {
-            Treasure newTreasure = new Treasure();
+            Treasure newTreasure = new Treasure(i);
             treasures[i] = newTreasure;
         }
 
@@ -113,7 +113,7 @@ public class VideoHandler {
 
     public void enemyCraft() {
         for (int i = 0; i < enemies.length; i++) {
-            Enemy newEnemies = new Enemy();
+            Enemy newEnemies = new Enemy(i);
             enemies[i] = newEnemies;
         }
     }
@@ -146,6 +146,32 @@ public class VideoHandler {
         for(int i=0; i< levels.length;i++){
             levels[i].calculateDif();
         }
+    }
+
+    public void displayLevels(){
+        System.out.println("Lista completa de niveles con su id y dificultad");
+        for(int i = 0; i<levels.length; i++){
+            System.out.println(levels[i].guideLevel());
+        }
+    }
+
+    public void displayEnemies(){
+        System.out.println("Lista completa de enemigos con su id, puntaje y tipo");
+        for(int i = 0; i<enemies.length; i++){
+            System.out.println(enemies[i].guideEnemy());
+        }
+    }
+    public void displayTreasures(){
+        System.out.println("Lista completa de tesoros con su id, puntaje y tipo");
+        for(int i = 0; i<treasures.length; i++){
+            System.out.println(treasures[i].guideTreasures());
+        }
+    }
+    public void addEnemyLvl(int idE, int idL){
+        Enemy copyEnemy = enemies[idE];
+        levels[idL].addEnemy(copyEnemy);
+        System.out.println("Nivel modificado con un enemigo extra");
+        System.out.println(levels[idL].toString());
     }
 }
 

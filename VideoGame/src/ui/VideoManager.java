@@ -35,13 +35,28 @@ public class VideoManager {
                 case 1 -> {
                     System.out.println("Digite su nickname");
                     sc.nextLine();
-                    String nickname = sc.nextLine();
+                    String nickname= sc.nextLine();
                     videoH.newPlayer(nickname);
                 }
                 case 2 -> {
+                    videoH.displayEnemies();
+                    System.out.println("Digite el id del enemigo que desea añadir");
+                    int id = sc.nextInt();
 
-                } //Need method
+                    videoH.displayLevels();
+                    System.out.println("Digite el id del nivel al que desea añadir al enemigo");
+                    int idL = sc.nextInt();
+
+                    videoH.addEnemyLvl(id, idL-1);
+                }
                 case 3 -> {
+                    videoH.displayTreasures();
+                    System.out.println("Digite el id del tesoro que desea añadir");
+
+                    videoH.displayLevels();
+                    System.out.println("Digite el id del nivel al que desea añadir al enemigo");
+                    int idL = sc.nextInt();
+
 
                 } //Need method
                 case 4 -> {
