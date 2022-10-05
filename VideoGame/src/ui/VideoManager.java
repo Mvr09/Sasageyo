@@ -32,6 +32,9 @@ public class VideoManager {
                     "0: Exit");
             option = sc.nextInt();
             switch (option){
+                case 0 -> {
+                    break;
+                }
                 case 1 -> {
                     System.out.println("Digite su nickname");
                     sc.nextLine();
@@ -52,13 +55,15 @@ public class VideoManager {
                 case 3 -> {
                     videoH.displayTreasures();
                     System.out.println("Digite el id del tesoro que desea añadir");
+                    int idT = sc.nextInt();
 
                     videoH.displayLevels();
                     System.out.println("Digite el id del nivel al que desea añadir al enemigo");
                     int idL = sc.nextInt();
 
+                    videoH.addTreasureLvl(idT, idL-1);
 
-                } //Need method
+                }
                 case 4 -> {
 
                 } //Need method

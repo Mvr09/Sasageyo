@@ -173,6 +173,13 @@ public class VideoHandler {
         System.out.println("Nivel modificado con un enemigo extra");
         System.out.println(levels[idL].toString());
     }
+
+    public void addTreasureLvl(int idT, int idL){
+        Treasure copyTreasure = treasures[idT];
+        levels[idL].addTreasure(copyTreasure);
+        System.out.println("Nivel modificado con un tesoro extra");
+        System.out.println(levels[idL].toString());
+    }
 }
 
 
