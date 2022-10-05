@@ -1,6 +1,7 @@
 package src.model;
 import java.lang.Math;
 public class Treasure {
+    private int id;
     private int score = (int) (Math.random() * 101);
     private TypeT type;
     private String url = "https://art.pixilart.com/a39a80b7c81f494.png";
@@ -8,7 +9,8 @@ public class Treasure {
     private int yVal = (int) (Math.random() * 101);
 
 
-    public Treasure() {
+    public Treasure(int id) {
+        this.id = id;
         this.score = score;
         this.type = TypeT.values()[(int)(Math.random() * 4)];
         this.url = url;
@@ -64,6 +66,14 @@ public class Treasure {
                 ", url='" + url + '\'' +
                 ", xVal=" + xVal +
                 ", yVal=" + yVal +
+                '}';
+    }
+
+    public String guideTreasures(){
+        return "Treasure{" +
+                "id=" + id +
+                "score=" + score +
+                ", type=" + this.type +
                 '}';
     }
 }
