@@ -66,6 +66,7 @@ public class Level {
         this.enemies = enemies;
     }
 
+
     @Override
     public String toString() {
         return "Level{" +
@@ -129,5 +130,9 @@ public class Level {
     public String guideLevel(){
         return "Level{" + "Id=" + this.id +
                 ", difficulty=" + this.difficulty+"\n";
+    }
+
+    public Treasure[] getTreasureArr(){
+        return treasures;
     }
 }

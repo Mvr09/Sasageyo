@@ -1,5 +1,5 @@
 package src.model;
 
 public enum TypeT {
-    Diamond, Ruby, Gold, Quarz, Ender_Pearl
+    Diamond, Ruby, Gold, Quartz, Ender_Pearl
 }

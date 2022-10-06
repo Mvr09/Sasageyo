@@ -1,4 +1,5 @@
 package src.ui;
+import src.model.TypeT;
 import src.model.VideoHandler;
 
 import java.util.Scanner;
@@ -23,7 +24,7 @@ public class VideoManager {
                     4: Modificar el puntaje de un jugador
                     5: Subir de nivel al jugador, si le alcanzan los puntos, sabiendo que esta en el 0 si no ha empezado
                     6: Solicitar informacion de un nivel en especifico
-                    7: Informar cantidad de un tipo de tesoro (No hay tipo creado)
+                    7: Informar cantidad de un tipo de tesoro 
                     8: Informar cantidad de un tipo de enemigo en todos los niveles
                     9: Informar el tipo de tesoro mas repetido en todos los niveles
                     10: Informar el enemigo que otorga mayor puntaje y el nivel donde se ubica
@@ -79,12 +80,26 @@ public class VideoManager {
                     System.out.println("Digite el numero de jugador a modificar");
                     int plId = sc.nextInt();
                     videoH.evalScore(plId);
-                } //Need method
+                }
                 case 6 -> {
+                    videoH.displayLevels();
+                    System.out.println("Digite el numero de su nivel");
+                    int lvlId = sc.nextInt();
+                    videoH.displayOneLevel(lvlId-1);
 
-                } //Need method
+                }
                 case 7 -> {
-
+                    System.out.println("Digite el numero de su tipo de tesoro");
+                    System.out.println("""
+                            1. Diamond 
+                            2. Ruby
+                            3. Gold
+                            4. Quartz
+                            5. Ender Pearl
+                            """);
+                    TypeT choice = TypeT.values()[sc.nextInt()-1];
+                    System.out.println(choice);
+                    videoH.countTypeTreasure(choice);
                 } //Need method
                 case 8 -> {
 

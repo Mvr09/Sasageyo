@@ -162,6 +162,10 @@ public class VideoHandler {
             System.out.println(levels[i].guideLevel());
         }
     }
+    public void displayOneLevel(int lvlId){
+        System.out.println("Su informacion del nivel pedido");
+        System.out.println(levels[lvlId].guideLevel());
+    }
 
     public void displayEnemies(){
         System.out.println("Lista completa de enemigos con su id, puntaje y tipo");
@@ -209,6 +213,16 @@ public class VideoHandler {
                break;
            }
        }
+    }
+
+    public void countTypeTreasure(TypeT choice){
+        int counter = 0;
+        for(int i = 0; i<levels.length; i++){
+            for(int j=0; j<2; j++)
+            if (levels[i].getTreasureArr()[j]{
+
+            }
+        }
     }
 }
 
