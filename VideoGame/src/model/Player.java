@@ -13,7 +13,7 @@ public class Player {
     public Player(String nickname, int id){
         this.name = "Player "+id;
         this.nickname = nickname;
-        this.level = 1;
+        this.level = 0;
         this.lives = 5;
         this.puntaje = 10;
     }

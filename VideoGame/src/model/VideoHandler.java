@@ -201,10 +201,12 @@ public class VideoHandler {
        }
        for (int i = 0;i<lstLScores.length;i++){
            if (playerScore>=lstLScores[i]){
-               System.out.println("Subio de nivel al"+i);
+               int lvl = i+1;
+               System.out.println("Subio de nivel al: "+lvl);
                players[plId].setLevel(i +1);
            } else if (playerScore<lstLScores[i]) {
                System.out.println("No le alcanzan los puntos para avanzar");
+               break;
            }
        }
     }

@@ -20,7 +20,7 @@ public class VideoManager {
                     "2: Registrar un enemigo a un nivel, sabiendo que entra como un cuarto enemigo\n" +
                     "3: Registrar un tesoro extra a un nivel, entra como bonus\n" +
                     "4: Modificar el puntaje de un jugador\n" +
-                    "5: Subir de nivel al jugador, si le alcanzan los puntos\n" +
+                    "5: Subir de nivel al jugador, si le alcanzan los puntos, sabiendo que esta en el 0 si no ha empezado\n" +
                     "6: Solicitar informacion de un nivel en especifico\n" +
                     "7: Informar cantidad de un tipo de tesoro (No hay tipo creado)\n" +
                     "8: Informar cantidad de un tipo de enemigo en todos los niveles\n" +
@@ -72,9 +72,12 @@ public class VideoManager {
                     int scoreChange = sc.nextInt();
 
                     videoH.modifyScorePlayer(plId, scoreChange);
-                } //Need method
+                }
                 case 5 -> {
-
+                    videoH.displyPlayers();
+                    System.out.println("Digite el numero de jugador a modificar");
+                    int plId = sc.nextInt();
+                    videoH.evalScore(plId);
                 } //Need method
                 case 6 -> {
 
