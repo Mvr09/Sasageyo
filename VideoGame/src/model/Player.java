@@ -8,10 +8,12 @@ public class Player {
     private String nickname;
     private int puntaje;
     private int lives;
+    private int level;
 
     public Player(String nickname, int id){
         this.name = "Player "+id;
         this.nickname = nickname;
+        this.level = 1;
         this.lives = 5;
         this.puntaje = 10;
     }
@@ -48,14 +50,23 @@ public class Player {
         this.lives = lives;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     @Override
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", puntaje=" + puntaje +
+                ", level=" + level +
                 ", lives=" + lives +
-                '}';
+                '}'+"\n";
     }
 
     public String guidePlayers(){

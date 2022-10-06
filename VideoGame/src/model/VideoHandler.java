@@ -192,6 +192,22 @@ public class VideoHandler {
     public void modifyScorePlayer(int plId, int newScore){
         players[plId].setPuntaje(newScore);
     }
+
+    public void evalScore(int plId){
+       int[] lstLScores = new int[levels.length];
+       int playerScore = players[plId].getPuntaje();
+       for(int i = 0; i< levels.length;i++){
+           lstLScores[i] = levels[i].getPtsNeed();
+       }
+       for (int i = 0;i<lstLScores.length;i++){
+           if (playerScore>=lstLScores[i]){
+               System.out.println("Subio de nivel al"+i);
+               players[plId].setLevel(i +1);
+           } else if (playerScore<lstLScores[i]) {
+               System.out.println("No le alcanzan los puntos para avanzar");
+           }
+       }
+    }
 }
 
 
