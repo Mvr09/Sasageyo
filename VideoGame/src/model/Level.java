@@ -135,4 +135,8 @@ public class Level {
     public Treasure[] getTreasureArr(){
         return treasures;
     }
+
+    public Enemy[] getEnemyArr(){return enemies;}
 }
+
+

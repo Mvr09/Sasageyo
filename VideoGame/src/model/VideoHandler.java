@@ -215,13 +215,26 @@ public class VideoHandler {
        }
     }
 
-    public int countTypeTreasure(TypeT choice){
+    public int countTypeTreasure(int input){
         int counter = 0;
+        TypeT choice = TypeT.values()[input];
         for(int i = 0; i<levels.length; i++){
             for(int j=0; j<2; j++)
             if (levels[i].getTreasureArr()[j].getType()==choice){
                 counter++;
             }
+        }
+        return counter;
+    }
+
+    public int countTypeEnemy(int input){
+        int counter = 0;
+        Type choice = Type.values()[input];
+        for(int i = 0; i<levels.length; i++){
+            for(int j=0; j<2; j++)
+                if (levels[i].getEnemyArr()[j].getType()==choice){
+                    counter++;
+                }
         }
         return counter;
     }

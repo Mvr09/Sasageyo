@@ -1,5 +1,4 @@
 package src.ui;
-import src.model.TypeT;
 import src.model.VideoHandler;
 
 import java.util.Scanner;
@@ -97,12 +96,22 @@ public class VideoManager {
                             4. Quartz
                             5. Ender Pearl
                             """);
-                    TypeT choice = TypeT.values()[sc.nextInt()-1];
-                    System.out.println(choice+" fue seleccionado");
-                    System.out.println("Hay: " + videoH.countTypeTreasure(choice) + " de " + choice);
+                    int choice = sc.nextInt()-1;
+                    System.out.println(choice+1+" fue seleccionado");
+                    System.out.println("Hay: " + videoH.countTypeTreasure(choice) + " de su seleccion");
 
                 } //Need method
                 case 8 -> {
+                    System.out.println("Digite el numero de su tipo de enemigo");
+                    System.out.println("""
+                            1. Ogre
+                            2. Abstract
+                            3. Boss
+                            4. Magical
+                            """);
+                    int choice = sc.nextInt()-1;
+                    System.out.println(choice+1+" fue seleccionado");
+                    System.out.println("Hay: " + videoH.countTypeEnemy(choice) + " de su seleccion");
 
                 } //Need method
                 case 9 -> {
