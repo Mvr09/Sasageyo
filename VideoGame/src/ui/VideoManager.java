@@ -98,8 +98,9 @@ public class VideoManager {
                             5. Ender Pearl
                             """);
                     TypeT choice = TypeT.values()[sc.nextInt()-1];
-                    System.out.println(choice);
-                    videoH.countTypeTreasure(choice);
+                    System.out.println(choice+" fue seleccionado");
+                    System.out.println("Hay: " + videoH.countTypeTreasure(choice) + " de " + choice);
+
                 } //Need method
                 case 8 -> {
 

@@ -215,14 +215,15 @@ public class VideoHandler {
        }
     }
 
-    public void countTypeTreasure(TypeT choice){
+    public int countTypeTreasure(TypeT choice){
         int counter = 0;
         for(int i = 0; i<levels.length; i++){
             for(int j=0; j<2; j++)
-            if (levels[i].getTreasureArr()[j]{
-
+            if (levels[i].getTreasureArr()[j].getType()==choice){
+                counter++;
             }
         }
+        return counter;
     }
 }
 
