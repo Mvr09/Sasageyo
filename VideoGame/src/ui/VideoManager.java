@@ -23,7 +23,7 @@ public class VideoManager {
                     4: Modificar el puntaje de un jugador
                     5: Subir de nivel al jugador, si le alcanzan los puntos, sabiendo que esta en el 0 si no ha empezado
                     6: Solicitar informacion de un nivel en especifico
-                    7: Informar cantidad de un tipo de tesoro 
+                    7: Informar cantidad de un tipo de tesoro
                     8: Informar cantidad de un tipo de enemigo en todos los niveles
                     9: Informar el tipo de tesoro mas repetido en todos los niveles
                     10: Informar el enemigo que otorga mayor puntaje y el nivel donde se ubica
