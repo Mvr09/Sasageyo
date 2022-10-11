@@ -129,16 +129,21 @@ public class VideoManager {
                     int c = videoH.countTypeTreasure(2);
                     int d = videoH.countTypeTreasure(3);
                     int e = videoH.countTypeTreasure(4);
+                    System.out.println("El tipo " + 0 + " se repite: " + a + " veces");
+                    System.out.println("El tipo " + 1 + " se repite: " + b + " veces");
+                    System.out.println("El tipo " + 2 + " se repite: " + c + " veces");
+                    System.out.println("El tipo " + 3 + " se repite: " + d + " veces");
+                    System.out.println("El tipo " + 4 + " se repite: " + e + " veces");
                     optArray[0] = a;
                     optArray[1] = b;
                     optArray[2] = c;
                     optArray[3] = d;
                     optArray[4] = e;
                     System.out.println(videoH.maxValType(optArray) + "\n");
-                } //Informar el tipo de tesoro mas repetido en todos los niveles
+                }
                 case 10 -> {
 
-                } //Need method
+                } //Informar el enemigo que otorga mayor puntaje y el nivel donde se ubica
                 case 11 -> {
 
                 } //Need method
