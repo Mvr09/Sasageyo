@@ -113,10 +113,29 @@ public class VideoManager {
                     System.out.println(choice+1+" fue seleccionado");
                     System.out.println("Hay: " + videoH.countTypeEnemy(choice) + " de su seleccion");
 
-                } //Need method
+                }
                 case 9 -> {
-
-                } //Need method
+                    int[] optArray = new int[5];
+                    System.out.println("Use esto para saber que tesoro tiene la mayor cantidad o si hay empates");
+                    System.out.println("""
+                            0. Diamond
+                            1. Ruby
+                            2. Gold
+                            3. Quartz
+                            4. Ender_Pearl
+                            """);
+                    int a = videoH.countTypeTreasure(0);
+                    int b = videoH.countTypeTreasure(1);
+                    int c = videoH.countTypeTreasure(2);
+                    int d = videoH.countTypeTreasure(3);
+                    int e = videoH.countTypeTreasure(4);
+                    optArray[0] = a;
+                    optArray[1] = b;
+                    optArray[2] = c;
+                    optArray[3] = d;
+                    optArray[4] = e;
+                    System.out.println(videoH.maxValType(optArray) + "\n");
+                } //Informar el tipo de tesoro mas repetido en todos los niveles
                 case 10 -> {
 
                 } //Need method

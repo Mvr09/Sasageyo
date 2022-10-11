@@ -220,9 +220,9 @@ public class VideoHandler {
         TypeT choice = TypeT.values()[input];
         for(int i = 0; i<levels.length; i++){
             for(int j=0; j<2; j++)
-            if (levels[i].getTreasureArr()[j].getType()==choice){
-                counter++;
-            }
+                if (levels[i].getTreasures()[j].getType()==choice){
+                    counter++;
+                }
         }
         return counter;
     }
@@ -237,6 +237,22 @@ public class VideoHandler {
                 }
         }
         return counter;
+    }
+
+    public String maxValType(int[] inputLst){
+        int max = 0;
+        String output = "El tipo mas repetido es el: ";
+        for(int i = 0; i<inputLst.length; i++){
+            if(max < inputLst[i]){
+                max = inputLst[i];
+            }
+        }
+        for(int i = 0; i<inputLst.length; i++){
+            if(max == inputLst[i]){
+                output += i + "  ";
+            }
+        }
+        return output;
     }
 }
 
