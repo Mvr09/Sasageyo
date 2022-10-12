@@ -142,16 +142,27 @@ public class VideoManager {
                     System.out.println(videoH.maxValType(optArray) + "\n");
                 }
                 case 10 -> {
-
-                } //Informar el enemigo que otorga mayor puntaje y el nivel donde se ubica
+                    System.out.println("El enemigo que mas puntaje otorga es:\n");
+                    System.out.println(videoH.topEnemy());
+                }
                 case 11 -> {
-
-                } //Need method
+                    System.out.println("Se sabe que los enemigos no tienen nombre, solo su tipo, es decir este es su nombre");
+                    System.out.println("""
+                            Lista de nombres
+                            1. Ogre
+                            2. Abstract
+                            3. Boss
+                            4. Magical
+                            """);
+                    int consonantCount = videoH.countNameConsonantEnemy();
+                    System.out.println("Hay un total de: "+ consonantCount+ " de consonantes");
+                } //Informar la cantidad de consonantes encontradas en los nombres de los enemigos del juego.(name?)
                 case 12 -> {
 
                 } //Need method
                 case 13 -> {
                     System.out.println(videoH.toString());
+
                 } //Need method
                 default -> throw new IllegalStateException("Unexpected value: " + option);
             }

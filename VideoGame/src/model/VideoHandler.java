@@ -254,6 +254,62 @@ public class VideoHandler {
         }
         return output;
     }
-}
+
+    public String topEnemy(){
+        Enemy topEnemy = null;
+        String output = "";
+        int pX = 0;
+        int pY = 0;
+        //i nivel
+        //j posicion en el nivel
+        for(int i = 0; i < levels.length; i++){
+            for(int j = 0; j<levels[i].getEnemyArr().length-1; j++){
+                if(topEnemy==null){
+                    topEnemy = levels[i].getEnemies()[j];
+                    pX = i;
+                    pY = j;
+                } else if (topEnemy.getScore()<levels[i].getEnemyArr()[j].getScore()) {
+                    topEnemy = levels[i].getEnemyArr()[j];
+                    pX = i;
+                    pY = j;
+                }
+
+                }
+            }
+        pX++;
+        pY++;
+        output = "Su top enemigo tiene un puntaje de: "+topEnemy.getScore()+ "\n" +
+                "Esta en el nivel: " + pX + "\n"+
+                "Esta en la posicion numero "+ pY + " del nivel";
+        return output;
+        }
+
+        public int countConsonant(Type word) {
+            String name = word.name();
+            int count = 0;
+            for (int i = 0; i < name.length(); i++) {
+                char ch = name.charAt(i);
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    //Dejo vacio para representar que no pasa nada
+                } else {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        public int countNameConsonantEnemy(){
+        int countTotal = 0;
+        //i level
+        //j enemy
+            for (int i = 0; i < levels.length; i++) {
+                for (int j = 0; j < levels[i].getEnemyArr().length-1; j++) {
+                    countTotal += countConsonant(levels[i].getEnemyArr()[j].getType());
+                }
+            }
+            return countTotal;
+        }
+    }
+
 
 
