@@ -69,6 +69,10 @@ public class Player {
                 '}'+"\n";
     }
 
+    /**
+     * Descrption: Simple to string representation
+     * @return
+     */
     public String guidePlayers(){
         return "Player{" +
                 "Numero de jugador='" + name + '\'' +
