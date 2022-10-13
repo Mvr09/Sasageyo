@@ -381,7 +381,7 @@ public class VideoHandler {
         String output = "";
         for (int i = 0; i < lstTop5.length; i++) {
             try{
-            output += lstTop5[i].getNickname() + ": "+ lstTop5[i].getPuntaje() + "\n";}
+            output +=i+ ". " + lstTop5[i].getNickname() + ": "+ lstTop5[i].getPuntaje() + "\n";}
             catch(Exception e){
                 break;
             }
