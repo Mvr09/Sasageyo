@@ -1,4 +1,5 @@
 package src.ui;
+import src.model.Player;
 import src.model.VideoHandler;
 
 import java.util.Scanner;
@@ -148,7 +149,7 @@ public class VideoManager {
                 case 11 -> {
                     System.out.println("Se sabe que los enemigos no tienen nombre, solo su tipo, es decir este es su nombre");
                     System.out.println("""
-                            Lista de nombres
+                            Lista de nombres posibles:
                             1. Ogre
                             2. Abstract
                             3. Boss
@@ -158,12 +159,16 @@ public class VideoManager {
                     System.out.println("Hay un total de: "+ consonantCount+ " de consonantes");
                 } //Informar la cantidad de consonantes encontradas en los nombres de los enemigos del juego.(name?)
                 case 12 -> {
-
-                } //Need method
+                    Player[] notNull = videoH.removeNullPlayers();
+                   int[] scoreLst =  videoH.playersToInt(notNull);
+                   int[] orderedScore = videoH.maxValues(scoreLst);
+                   Player[] top5 = videoH.intToPlayerArray(orderedScore);
+                   System.out.println(videoH.displayTop5(top5));
+                } //Informar el top 5 de jugadores
                 case 13 -> {
                     System.out.println(videoH.toString());
 
-                } //Need method
+                }
                 default -> throw new IllegalStateException("Unexpected value: " + option);
             }
         }

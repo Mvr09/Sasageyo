@@ -2,6 +2,7 @@ package src.model;
 
 import java.util.Arrays;
 
+
 public class VideoHandler {
     private Player[] players;
     private Treasure[] treasures;
@@ -309,6 +310,84 @@ public class VideoHandler {
             }
             return countTotal;
         }
+        public Player[] removeNullPlayers(){
+            int count = 0;
+            for (Player player : players) {
+                if (player != null) {
+                    count++;
+                }
+            }
+           Player[] output = new Player[count];
+
+            for (int i = 0; i < players.length; i++) {
+                if (players[i]!= null) {
+                    output[i] = players[i];
+                }
+            }
+            return output;
+        }
+    public int[] playersToInt(Player[] players2) {
+        int[] output = new int[players2.length];
+        for (int i = 0; i < players2.length; i++) {
+            output[i] = players2[i].getPuntaje();
+        }
+        return output;
+    }
+    public Player[] intToPlayerArray(int[] scores) {
+        Player[] output = new Player[5];
+        for (int i = 0; i < 4; i++) {
+            for (Player player : players) {
+                //catch
+                try{
+                    if (scores[i] == player.getPuntaje()) {
+                        output[i] = player;
+                        break;
+                }}catch(Exception e){
+                    break;
+                }
+            }
+        }
+        return output;
+    }
+    public int[] maxValues(int[] values) {
+        int tempMax =  0;//1
+        int[] organizedValues = new int[values.length + 1];
+        int[] finalValues = new int[values.length];
+        for (int i = 0; i < values.length; i++) {
+            tempMax = maxInt(values);
+            organizedValues[i] = tempMax;
+            for (int j = 0; j < values.length; j++) {
+                if (tempMax == values[j]) {
+                    values[j] = 0;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < organizedValues.length-1; i++) {
+            finalValues[i] = organizedValues[i];
+        }
+        return finalValues;
+    }
+    public int maxInt(int[] values){
+        int tempMax = values[0];
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] > tempMax){
+                tempMax = values[i];
+            }
+        }
+        return tempMax;
+    }
+    public String displayTop5(Player[] lstTop5){
+        String output = "";
+        for (int i = 0; i < lstTop5.length; i++) {
+            try{
+            output += lstTop5[i].getNickname() + ": "+ lstTop5[i].getPuntaje() + "\n";}
+            catch(Exception e){
+                break;
+            }
+        }
+        return output;
+    }
     }
 
 
