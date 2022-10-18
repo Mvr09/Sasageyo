@@ -15,7 +15,7 @@ public class Tester {
         System.out.println(a);
     }
     public static int[] maxValues(int[] values) {
-        int tempMax =  0;//1
+        int tempMax;//1
         int[] organizedValues = new int[values.length + 1];
         int[] finalValues = new int[values.length];
         for (int i = 0; i < values.length; i++) {
@@ -35,11 +35,11 @@ public class Tester {
     }
     public static int maxInt(int[] values){
         int tempMax = values[0];
-        for (int i = 0; i < values.length; i++) {
-                if (values[i] > tempMax){
-                    tempMax = values[i];
-                }
+        for (int value : values) {
+            if (value > tempMax) {
+                tempMax = value;
             }
+        }
         return tempMax;
     }
     }
