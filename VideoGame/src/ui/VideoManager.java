@@ -36,7 +36,7 @@ public class VideoManager {
             switch (option){
                 case 0 -> {
                     break;
-                }
+                }// Not needed but useful to visualize the result
                 case 1 -> {
                     System.out.println("Digite su nickname");
                     sc.nextLine();
@@ -91,7 +91,7 @@ public class VideoManager {
                 case 7 -> {
                     System.out.println("Digite el numero de su tipo de tesoro");
                     System.out.println("""
-                            1. Diamond 
+                            1. Diamond
                             2. Ruby
                             3. Gold
                             4. Quartz
@@ -157,7 +157,7 @@ public class VideoManager {
                             """);
                     int consonantCount = videoH.countNameConsonantEnemy();
                     System.out.println("Hay un total de: "+ consonantCount+ " de consonantes");
-                } //Informar la cantidad de consonantes encontradas en los nombres de los enemigos del juego.(name?)
+                }
                 case 12 -> {
                     Player[] notNull = videoH.removeNullPlayers();
                    int[] scoreLst =  videoH.playersToInt(notNull);
@@ -165,10 +165,7 @@ public class VideoManager {
                    Player[] top5 = videoH.intToPlayerArray(orderedScore);
                    System.out.println(videoH.displayTop5(top5));
                 } //Informar el top 5 de jugadores
-                case 13 -> {
-                    System.out.println(videoH.toString());
-
-                }
+                case 13 -> System.out.println(videoH.toString());
                 default -> throw new IllegalStateException("Unexpected value: " + option);
             }
         }
